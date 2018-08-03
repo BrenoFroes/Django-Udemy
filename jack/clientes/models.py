@@ -1,11 +1,11 @@
 from django.db import models
 
 class Person(models.Model):
-    first_name = models.CharField(max_length=30,null=True,blank=True)
-    last_name=models.CharField(max_length=30,null=True,blank=True)
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
     age = models.IntegerField()
-    salaray = models.DecimalField(max_digits=5, decimal_places=2)
-    bio = models.TextField()
+    salaray = models.DecimalField(max_digits=5, decimal_places=2,null=True,blank=True)
+    bio = models.TextField(null=True,blank=True)
     photo = models.ImageField(upload_to='clients_photos', null=True, blank=True)
 
     def __str__(self):
